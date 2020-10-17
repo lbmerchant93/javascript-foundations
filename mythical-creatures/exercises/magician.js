@@ -17,12 +17,14 @@ class Magician {
   }
   cast(){
     this.confidenceLevel +=1;
+    if (this.confidenceLevel >2) {
+      this.confident = true;
+    }
     if (this.topHat === true){
       return "PULL RABBIT FROM TOP HAT";
-    } else if (this.topHat === false && this.confidenceLevel <=2){
+    } else if (this.topHat === false){
       return "PULL DOVE FROM SLEEVE";
-    } else if (this.topHat === false && this.confidenceLevel >=3) {
-      this.confident = true;
+    } else {
       return "PULL DOVE FROM SLEEVE";
     }
   }
